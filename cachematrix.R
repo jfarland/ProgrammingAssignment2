@@ -7,7 +7,9 @@
 
 
 makeCacheMatrix <- function(x = matrix()) {
+  #initialize
   inv <- NULL
+  #cross environment
   set <- function(y) {
     x <<- y
     inv <<- NULL
@@ -23,8 +25,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(g, ...)  {
   inv <- g$getinverse()
+  
+  
   if(!is.null(inv)) {
-    message("getting cached data.")
+    message("fetching...")
     return(inv)
   }
   data <- g$get()
